@@ -29,6 +29,18 @@ public class MyArrayList {
 
     }
 
+    public void add(int index, Object element){
+        if(myArray.length>size){
+            myArray[index]=element;
+            size++;
+        }
+        else{
+            increaseArrayLength();
+            myArray[index]=element;
+            size++;
+        }
+    }
+
     public Object getIndexValue(int e){
         if(e>size || e<0){
             System.out.println("Index does not exist");

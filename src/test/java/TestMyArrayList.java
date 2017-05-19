@@ -27,6 +27,27 @@ public class TestMyArrayList {
     }
 
     @Test
+    public void testAddIfSizeSmallerThanLengthToSpecificElement(){
+
+        //given
+        String changeStuff= "changed";
+        int index= 3;
+        for(int i = 0; i < 12; i++) {
+            String stuff= "stuff";
+            stuff += i;
+
+
+            list.add(stuff);
+        }
+        //when
+        list.add(index, changeStuff);
+        //then
+        Assert.assertEquals("should return changed", "changed", list.myArray[3]);
+        Assert.assertEquals("should return 13", 13, list.size);
+
+    }
+
+    @Test
     public void testAddIfSizeEqualToLength(){
 
         //given
