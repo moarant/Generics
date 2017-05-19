@@ -15,6 +15,11 @@ public class MyArrayList {
         this.myArray = new Object[DEFAULT_CAPACITY];
     }
 
+    public MyArrayList(int length){
+        this.myArray=new Object[length];
+    }
+
+
     public void add(Object e){
         if(myArray.length>size){
             myArray[size]=e;
