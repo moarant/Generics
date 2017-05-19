@@ -30,7 +30,7 @@ public class MyArrayList {
     }
 
     public Object getIndexValue(int e){
-        if(e>size){
+        if(e>size || e<0){
             System.out.println("Index does not exist");
             return null;
         }
@@ -40,7 +40,7 @@ public class MyArrayList {
     }
 
     public void removeIndex(int removedIndex)throws IndexOutOfBoundsException{
-        if(removedIndex>size){
+        if(removedIndex>size ||removedIndex<0){
             throw new IndexOutOfBoundsException("Index "+removedIndex+ " does not exist in this array");
         }
         Object [] newArray= new Object[myArray.length];
@@ -57,7 +57,7 @@ public class MyArrayList {
 
 
     public Object set(int index, Object element) throws IndexOutOfBoundsException{
-        if(index>size){
+        if(index>size || index<0){
             throw new IndexOutOfBoundsException ("Index " + index + " does not exist in this array");
         }
         Object value= myArray[index];
@@ -88,7 +88,6 @@ public class MyArrayList {
             if (myArray[i]!=null){
                 empty=false;
             }
-
         }
         return empty;
     }
@@ -98,11 +97,11 @@ public class MyArrayList {
             if (myArray[i].equals(element)) {
                 return true;
             }
-
         }
         return false;
-
     }
+
+
 
 
 
